@@ -1,11 +1,4 @@
 import { env } from "@/env";
-import { db } from "@/server/db";
-import {
-  accounts,
-  sessions,
-  users,
-  verificationTokens,
-} from "@/server/db/schema";
 import { DrizzleAdapter } from "@auth/drizzle-adapter";
 import type { DefaultSession, NextAuthConfig } from "next-auth";
 import NextAuth from "next-auth";
@@ -41,12 +34,6 @@ export const authOptions: NextAuthConfig = {
       },
     }),
   },
-  adapter: DrizzleAdapter(db, {
-    usersTable: users,
-    accountsTable: accounts,
-    sessionsTable: sessions,
-    verificationTokensTable: verificationTokens,
-  }) as Adapter,
   providers: [
     // DiscordProvider({
     //   clientId: env.DISCORD_CLIENT_ID,
