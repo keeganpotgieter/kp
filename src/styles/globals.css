@@ -1,0 +1,26 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import "themes/index.css";
+
+@font-face {
+  font-family: "CascadiaCode";
+  src: url(/assets/fonts/CascadiaCode.ttf);
+  display: swap;
+  size: 15px;
+}
+
+* {
+  @apply font-cascadia;
+}
+
+body {
+  ::-webkit-scrollbar {
+    display: none;
+  }
+
+  -webkit-user-select: none; /* Safari */
+  -ms-user-select: none; /* IE 10 and IE 11 */
+  user-select: none; /* Standard syntax */
+}

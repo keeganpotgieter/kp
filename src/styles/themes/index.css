@@ -1,0 +1,126 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import "light.css";
+@import "dark.css";
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+@property --border-animate-rotate {
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
+}
+
+@property --text-gradient-animate-rotate {
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
+}
+
+@layer components {
+  .border-animate,
+  .border-animate-full {
+    position: relative;
+    &:before {
+      content: "";
+      background: conic-gradient(
+        from var(--border-animate-rotate),
+        transparent 0%,
+        hsl(var(--primary)) 5%,
+        hsl(var(--secondary)) 10%,
+        hsl(var(--tertiary)) 15%,
+        transparent 20%
+      );
+      position: absolute;
+      inset: 0;
+      animation: border-animate-rotate 10s linear infinite;
+    }
+    &:after {
+      content: "";
+      position: absolute;
+      inset: 2px;
+    }
+  }
+
+  .border-animate-full {
+    &:before {
+      background: conic-gradient(
+        from var(--border-animate-rotate),
+        hsl(var(--secondary)) 0%,
+        hsl(var(--primary)) 25%,
+        hsl(var(--tertiary)) 50%,
+        hsl(var(--cyan)) 75%,
+        hsl(var(--secondary)) 100%
+      );
+    }
+  }
+}
+
+@keyframes border-animate-rotate {
+  to {
+    --border-animate-rotate: 360deg;
+  }
+}
+
+@keyframes text-gradient-animate-rotate {
+  to {
+    --text-gradient-animate-rotate: 360deg;
+  }
+}
+
+#input-value,
+#input-suggestion {
+  display: inline;
+}
+
+#input-suggestion {
+  opacity: 0.5;
+  pointer-events: none;
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+}
+
+#input-suggestion::after {
+  content: attr(data-suggestion);
+}
+
+@layer utilities {
+  .not-gradient-text {
+    background: hsl(var(--foreground));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    background-size: 100% 50%;
+  }
+
+  .gradient-text {
+    background: conic-gradient(
+      from var(--text-gradient-animate-rotate),
+      hsl(var(--secondary)),
+      hsl(var(--primary)),
+      hsl(var(--tertiary)),
+      hsl(var(--cyan)),
+      hsl(var(--secondary))
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    background-size: 100% 50%;
+    inset: 0;
+  }
+
+  .gradient-text:hover {
+    animation: text-gradient-animate-rotate 8s ease-in-out infinite;
+  }
+}
