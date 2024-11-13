@@ -18,7 +18,7 @@ export default function RootLayout({
     <html lang="en" className={`${GeistSans.variable}`}>
       <body
         className={cn(
-          "min-h-screen cursor-default bg-background font-sans text-foreground antialiased",
+          "h-screen min-h-screen w-screen cursor-default overflow-clip bg-background font-sans text-foreground antialiased",
         )}
       >
         <ThemeProvider
