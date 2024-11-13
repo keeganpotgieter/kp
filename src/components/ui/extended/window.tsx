@@ -2,7 +2,7 @@ import { cn } from "@/lib/utils";
 import { PanelBottomOpenIcon } from "lucide-react";
 import React from "react";
 import { ReactNode } from "react";
-import { useAsciiText, ansiRegular as font } from "react-ascii-text";
+import { useAsciiText, ansiShadow as font } from "react-ascii-text";
 
 function BaseBanner() {
   const asciiTextRef = useAsciiText({
@@ -68,7 +68,7 @@ const WindowDisplay = ({
   return (
     <div
       className={cn(
-        "flex min-w-fit flex-col rounded-md border-border text-foreground shadow-xl shadow-primary/20 sm:hover:shadow-primary/30",
+        "flex min-w-fit flex-col overscroll-none rounded-md border-border text-foreground shadow-xl shadow-primary/20 sm:hover:shadow-primary/30",
         className,
         minify
           ? "animate-minimize-window sm:h-0 sm:w-fit"
@@ -140,7 +140,7 @@ const WindowDisplay = ({
         <div className="hidden h-fit w-full items-center justify-center pt-2 text-center text-[8px] leading-[0.5rem] md:flex">
           <BaseBanner />
         </div>
-        <div className="overflow-clip">{children}</div>
+        <div className="overflow-y-auto overscroll-none">{children}</div>
       </div>
     </div>
   );
