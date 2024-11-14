@@ -117,12 +117,17 @@ const config = {
           "20%": { transform: "rotate(-10deg)" },
           "25%": { transform: "rotate(0deg)" },
           "30%": { transform: "rotate(10deg)" },
-
-          // "0%": { transform: "rotate(0deg)" },
-          // "25%": { transform: "rotate(-10deg)" },
-          // "50%": { transform: "rotate(10deg)" },
-          // "75%": { transform: "rotate(-10deg)" },
-          // "100%": { transform: "rotate(0deg)" },
+        },
+        "fade-rotate-in": {
+          "0%": {
+            opacity: "0",
+            transform: "rotate(-30deg) translate(-32px, 0)",
+          },
+          "60%": {
+            opacity: "0",
+            transform: "rotate(-30deg) translate(-32px, 0)",
+          },
+          "100%": { opacity: "1", transform: "rotate(0deg) translate(0, 0)" },
         },
       },
       animation: {
@@ -135,7 +140,9 @@ const config = {
         "maximize-window":
           "maximize-window 0.5s cubic-bezier(0.44, 0.05, 0.6, 0.94)",
         "fade-in": "fade-in 1s cubic-bezier(0.44, 0.05, 0.6, 0.94) forwards",
-        wave: "wave 1s cubic-bezier(0.44, 0.05, 0.6, 0.94) 1s",
+        wave: "fade-rotate-in 2.5s cubic-bezier(0.44, 0.05, 0.6, 0.94) forwards, wave 1s cubic-bezier(0.44, 0.05, 0.6, 0.94) 2.5s",
+        "fade-rotate-in":
+          "fade-rotate-in 2.5s cubic-bezier(0.44, 0.05, 0.6, 0.94) forwards",
       },
     },
   },
