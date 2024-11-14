@@ -21,7 +21,7 @@ export const super_secret = {
 
 export const resume = {
   fn: async (): Promise<string> => {
-    window.open(`./assets/Resume_06_24.pdf`, "_blank");
+    window.open(`./assets/resume.pdf`, "_blank");
 
     return "Opening resume...";
   },
