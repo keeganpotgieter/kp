@@ -6,6 +6,7 @@ import BorderAnimate from "@/components/ui/extended/border-animate";
 import { CopyCheckIcon, CopyIcon } from "lucide-react";
 import Link from "next/link";
 import React from "react";
+import { useAsciiText, ansiShadow as font } from "react-ascii-text";
 import config from "~/config.json";
 
 const groupCommandsByDescription = () => {
@@ -145,18 +146,6 @@ export const date = {
   description: "Show date and time",
 } satisfies BinFunction;
 
-/**
- * Not available yet
- */
-// export const wall = {
-//   fn: async (): Promise<string> => {
-//     window.open("/wall", "_self");
-
-//     return "Opening The Wall...";
-//   },
-//   description: "View 'The Wall'",
-// } satisfies BinFunction;
-
 export const email = {
   fn: async (): Promise<string> => {
     window.open("mailto:keeganpotgieter@outlook.com.au");
@@ -179,12 +168,34 @@ export const sudo = {
   description: "Sudo",
 } satisfies BinFunction<string[]>;
 
+function Banner() {
+  const asciiTextRef = useAsciiText({
+    animationCharacters: "▒░█",
+    animationCharacterSpacing: 1,
+    animationDirection: "right",
+    animationInterval: 100,
+    animationLoop: false,
+    animationSpeed: 2,
+    fadeInOnly: true,
+    font: font,
+    text: "Welcome! I am Keegan",
+  });
+
+  return (
+    <pre
+      ref={asciiTextRef as React.MutableRefObject<HTMLPreElement | null>}
+    ></pre>
+  );
+}
+
 const bannerFn = () => {
   return (
     <BorderAnimate full>
-      <div className="flex w-full items-center gap-2 p-0 text-xl">
-        <h2>Welcome! I&apos;m Keegan</h2>{" "}
-        <div className="h-fit w-fit origin-bottom-right animate-wave text-base">
+      <div className="_text-xl flex w-full items-center gap-2 p-0">
+        <div className="pt-1 text-[4px] leading-[0.25rem]">
+          <Banner />
+        </div>
+        <div className="h-fit w-fit origin-bottom-right animate-wave text-lg">
           👋
         </div>
       </div>
