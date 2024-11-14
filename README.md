@@ -6,15 +6,15 @@ This is the source code for my personal website. It's built with [`Next.js`](htt
 
 <!-- markdownlint-disable-next-line -->
 <p align="center">
-  <a href="https://keeganpotgieter.com" rel="noopener" target="_blank"><img width="100%" height="auto" src="https://raw.githubusercontent.com/keeganpotgieter/kp/assets/Keegan_Potgieter_Terminal_1.png" alt="Keegan Potgieter Terminal 1"></a>
+  <a href="https://keeganpotgieter.com" rel="noopener" target="_blank"><img width="100%" height="auto" src="https://raw.githubusercontent.com/keeganpotgieter/kp/main/assets/Keegan_Potgieter_Terminal_1.jpeg" alt="Keegan Potgieter Terminal 1"></a>
 </p>
 
 <p align="center">
-  <a href="https://keeganpotgieter.com" rel="noopener" target="_blank"><img width="100%" height="auto" src="https://raw.githubusercontent.com/keeganpotgieter/kp/assets/Keegan_Potgieter_Terminal_2.png" alt="Keegan Potgieter Terminal 2"></a>
+  <a href="https://keeganpotgieter.com" rel="noopener" target="_blank"><img width="100%" height="auto" src="https://raw.githubusercontent.com/keeganpotgieter/kp/main/assets/Keegan_Potgieter_Terminal_2.jpeg" alt="Keegan Potgieter Terminal 2"></a>
 </p>
 
 <p align="center">
-  <a href="https://keeganpotgieter.com" rel="noopener" target="_blank"><img width="100%" height="auto" src="https://raw.githubusercontent.com/keeganpotgieter/kp/assets/Keegan_Potgieter_Terminal_3.png" alt="Keegan Potgieter Terminal 3"></a>
+  <a href="https://keeganpotgieter.com" rel="noopener" target="_blank"><img width="100%" height="auto" src="https://raw.githubusercontent.com/keeganpotgieter/kp/main/assets/Keegan_Potgieter_Terminal_3.jpeg" alt="Keegan Potgieter Terminal 3"></a>
 </p>
 
 ## Links
