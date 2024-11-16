@@ -191,8 +191,8 @@ function Banner() {
 const bannerFn = () => {
   return (
     <BorderAnimate full>
-      <div className="_text-xl flex w-full items-center gap-2 p-0">
-        <div className="pt-1 text-[4px] leading-[0.25rem]">
+      <div className="flex w-full items-center gap-2 p-0">
+        <div className="pt-1 text-[3px] leading-[0.2rem]">
           <Banner />
         </div>
         <div className="h-fit w-fit origin-bottom-right animate-wave text-lg">

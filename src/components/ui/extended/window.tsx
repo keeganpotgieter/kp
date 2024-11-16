@@ -4,7 +4,7 @@ import React from "react";
 import { ReactNode } from "react";
 import { useAsciiText, ansiShadow as font } from "react-ascii-text";
 
-function BaseBanner() {
+function Banner() {
   const asciiTextRef = useAsciiText({
     animationCharacters: "▒░█",
     animationCharacterSpacing: 1,
@@ -15,26 +15,6 @@ function BaseBanner() {
     animationSpeed: 30,
     font: font,
     text: ["Keegan Potgieter", "Software Engineer"],
-  });
-
-  return (
-    <pre
-      ref={asciiTextRef as React.MutableRefObject<HTMLPreElement | null>}
-    ></pre>
-  );
-}
-
-function MobileBanner() {
-  const asciiTextRef = useAsciiText({
-    animationCharacters: "▒░█",
-    animationCharacterSpacing: 1,
-    animationDelay: 2000,
-    animationDirection: "vertical",
-    animationInterval: 100,
-    animationLoop: true,
-    animationSpeed: 30,
-    font: font,
-    text: [`Keegan\nPotgieter`, "Software\nEngineer"],
   });
 
   return (
@@ -133,14 +113,16 @@ const WindowDisplay = ({
           { "sm:max-h-0 sm:max-w-0 sm:border-none": minify },
         )}
       >
-        <div className="flex h-fit w-full items-center justify-center pt-2 text-center text-[6px] leading-[0.375rem] md:hidden">
-          <MobileBanner />
+        <div className="flex h-fit w-full items-center justify-center pt-2 text-center text-[4px] leading-[0.25rem] md:hidden">
+          <Banner />
         </div>
 
         <div className="hidden h-fit w-full items-center justify-center pt-2 text-center text-[8px] leading-[0.5rem] md:flex">
-          <BaseBanner />
+          <Banner />
         </div>
-        <div className="overflow-y-auto overscroll-none">{children}</div>
+        <div className="mask relative mt-4 overflow-y-auto overscroll-none">
+          {children}
+        </div>
       </div>
     </div>
   );
