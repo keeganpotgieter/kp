@@ -1,8 +1,9 @@
 @tailwind base;
+@tailwind components;
 
 @layer base {
   .dark {
-    --background: 224 71% 4%;
+    --background: 0 100% 0%;
     --foreground: 213 31% 91%;
 
     --muted: 223 47% 11%;
@@ -15,7 +16,7 @@
     --popover-foreground: 215 20.2% 65.1%;
 
     --border: 0 0% 20%;
-    --input: 216 34% 17%; /* (216, 34%, 17%) */
+    --input: 216 34% 17%;
 
     --card: 224 71% 4%;
     --card-foreground: 213 31% 91%;
@@ -43,5 +44,40 @@
     --green: 141, 71%, 50%;
 
     --radius: 0.5rem;
+  }
+}
+
+.dark {
+  .mask {
+    position: relative;
+    background-clip: content-box;
+  }
+
+  .mask::before {
+    content: "";
+    position: absolute;
+    left: 0rem;
+    right: 0rem;
+    top: 0rem;
+    height: 1rem;
+    z-index: 100;
+    backdrop-filter: blur(2px) brightness(10) saturate(3) contrast(1);
+    -webkit-backdrop-filter: blur(2px) brightness(10) saturate(3) contrast(1);
+    mask-image: linear-gradient(to bottom, black 0%, transparent 100%);
+    -webkit-mask-image: linear-gradient(to bottom, black 0%, transparent 100%);
+  }
+
+  .mask::after {
+    content: "";
+    position: absolute;
+    left: 0.5rem;
+    right: 0.5rem;
+    bottom: -0.25rem;
+    height: 1rem;
+    z-index: 100;
+    backdrop-filter: blur(2px) brightness(10) saturate(3) contrast(1);
+    -webkit-backdrop-filter: blur(2px) brightness(10) saturate(3) contrast(1);
+    mask-image: linear-gradient(to top, black 0%, transparent 100%);
+    -webkit-mask-image: linear-gradient(to top, black 0%, transparent 100%);
   }
 }

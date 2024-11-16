@@ -113,14 +113,14 @@ const WindowDisplay = ({
           { "sm:max-h-0 sm:max-w-0 sm:border-none": minify },
         )}
       >
-        <div className="flex h-fit w-full items-center justify-center pt-2 text-center text-[4px] leading-[0.25rem] md:hidden">
+        <div className="flex h-fit w-full items-center justify-center pt-2 text-center text-[4px] leading-[0.25rem] sm:hidden">
           <Banner />
         </div>
 
-        <div className="hidden h-fit w-full items-center justify-center pt-2 text-center text-[8px] leading-[0.5rem] md:flex">
+        <div className="hidden h-fit w-full items-center justify-center pt-2 text-center text-[7px] leading-[0.5rem] sm:flex">
           <Banner />
         </div>
-        <div className="mask relative mt-4 overflow-y-auto overscroll-none">
+        <div className="mask relative my-2 overflow-y-auto overscroll-none">
           {children}
         </div>
       </div>
