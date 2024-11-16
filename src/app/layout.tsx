@@ -4,6 +4,14 @@ import "@/styles/globals.css";
 import { TRPCReactProvider } from "@/trpc/react";
 import { GeistSans } from "geist/font/sans";
 import { type Metadata } from "next";
+import type { Viewport } from "next";
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 1,
+  userScalable: false,
+};
 
 export const metadata: Metadata = {
   title: "Keegan Potgieter",
@@ -18,7 +26,7 @@ export default function RootLayout({
     <html lang="en" className={`${GeistSans.variable}`}>
       <body
         className={cn(
-          "h-screen min-h-screen w-screen cursor-default overflow-clip bg-background font-sans text-foreground antialiased",
+          "w-dvh cursor-default overflow-clip bg-background font-sans text-foreground antialiased",
         )}
       >
         <ThemeProvider
