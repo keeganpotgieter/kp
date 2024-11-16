@@ -12,7 +12,7 @@ interface Props {
 const Layout: React.FC<Props> = ({ children, onClick }) => {
   return (
     <div
-      className="relative flex h-screen w-dvw items-center justify-center overflow-hidden overscroll-none bg-background text-xs md:text-base"
+      className="relative flex h-full w-full items-center justify-center overflow-hidden overscroll-none bg-background text-xs md:text-base"
       onClick={onClick}
     >
       <CrypticHover>
@@ -23,7 +23,7 @@ const Layout: React.FC<Props> = ({ children, onClick }) => {
           {children}
         </WindowDisplay>
 
-        <div className="text-muted-foreground/80 absolute z-[1] m-auto h-fit w-fit -translate-y-24 animate-fade-in rounded-md bg-black/10 text-center filter-none backdrop-blur-xl">
+        <div className="absolute z-[1] m-auto h-fit w-fit -translate-y-24 animate-fade-in rounded-md bg-black/10 text-center text-muted-foreground/80 filter-none backdrop-blur-xl">
           <SecretGreeting />
         </div>
       </CrypticHover>

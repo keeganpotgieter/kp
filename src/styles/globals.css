@@ -8,7 +8,7 @@
   font-family: "CascadiaCode";
   src: url(/assets/fonts/CascadiaCode.ttf);
   display: swap;
-  size: 15px;
+  size: 16px;
 }
 
 * {
@@ -19,6 +19,8 @@ body {
   ::-webkit-scrollbar {
     display: none;
   }
+
+  height: calc(100dvh - env(safe-area-inset-bottom));
 
   -webkit-user-select: none; /* Safari */
   -ms-user-select: none; /* IE 10 and IE 11 */
