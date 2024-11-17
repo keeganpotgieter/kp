@@ -22,7 +22,10 @@ const TerminalComponent: React.FC<TerminalComponentProps> = ({ inputRef }) => {
 
   return (
     <div className="h-full w-full overflow-hidden rounded-lg p-2">
-      <div ref={containerRef} className="h-full w-full overflow-y-auto pt-2">
+      <div
+        ref={containerRef}
+        className="h-full w-full overflow-y-auto overscroll-none pt-2"
+      >
         <div className="float-left flex w-full flex-col gap-2 overflow-x-clip">
           <History history={history} />
 

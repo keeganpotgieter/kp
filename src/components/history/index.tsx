@@ -24,7 +24,7 @@ export const History: React.FC<Props> = ({ history }) => {
             </div>
 
             <Component
-              className="mb-2 whitespace-pre-wrap"
+              className="whitespace-pre-wrap pb-2"
               style={{ lineHeight: "normal" }}
             >
               {entry.output}
