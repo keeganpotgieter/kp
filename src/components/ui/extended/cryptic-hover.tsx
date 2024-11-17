@@ -12,8 +12,8 @@ export const CrypticHover = ({
   className?: string;
   children?: React.ReactNode;
 }) => {
-  const mouseX = useMotionValue(0);
-  const mouseY = useMotionValue(0);
+  const mouseX = useMotionValue(window.innerWidth / 2);
+  const mouseY = useMotionValue(window.innerHeight / 2);
 
   const [randomString, setRandomString] = useState("");
 
@@ -82,7 +82,7 @@ export function CardPattern({
   return (
     <div className="pointer-events-none z-0">
       <motion.div
-        className="from-primary/50 to-secondary/50 absolute inset-0 bg-gradient-to-r backdrop-blur-2xl transition duration-500 group-hover/card:opacity-100"
+        className="absolute inset-0 bg-gradient-to-r from-primary/50 to-secondary/50 backdrop-blur-2xl transition duration-500 group-hover/card:opacity-100"
         style={style}
       >
         <motion.div
