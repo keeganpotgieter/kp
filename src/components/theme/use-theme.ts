@@ -4,6 +4,11 @@ import { themes } from "@/styles/themes";
 import { useTheme as useNextTheme } from "next-themes";
 import React from "react";
 
+const themeColors = {
+  light: "#FFFFFF",
+  dark: "#000000",
+} satisfies Record<(typeof themes)[number], string>;
+
 export const useTheme = () => {
   const { theme, setTheme } = useNextTheme();
 
@@ -24,6 +29,17 @@ export const useTheme = () => {
       }
 
       setTheme(theme);
+
+      const metaThemeColor = document.querySelector('meta[name="theme-color"]');
+
+      if (metaThemeColor) {
+        metaThemeColor.setAttribute(
+          "content",
+          theme
+            ? themeColors[theme as keyof typeof themeColors]
+            : themeColors.dark,
+        );
+      }
 
       return `Theme ${theme} set successfully!`;
     },
