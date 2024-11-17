@@ -120,9 +120,7 @@ const WindowDisplay = ({
         <div className="hidden h-fit w-full items-center justify-center pt-2 text-center text-[7px] leading-[0.5rem] sm:flex">
           <Banner />
         </div>
-        <div className="mask relative my-2 overflow-y-auto overscroll-none">
-          {children}
-        </div>
+        <div className="mask relative overflow-y-clip py-2">{children}</div>
       </div>
     </div>
   );
