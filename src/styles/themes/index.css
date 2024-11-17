@@ -118,9 +118,11 @@
     background-clip: text;
     background-size: 100% 50%;
     inset: 0;
+    animation: text-gradient-animate-rotate 4s ease-in-out infinite;
+    animation-play-state: paused;
   }
 
   .gradient-text:hover {
-    animation: text-gradient-animate-rotate 8s ease-in-out infinite;
+    animation-play-state: running;
   }
 }
