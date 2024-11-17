@@ -190,7 +190,7 @@ function Banner() {
 
 const bannerFn = () => {
   return (
-    <BorderAnimate full>
+    <BorderAnimate full className="mt-2">
       <div className="flex w-full items-center gap-2 p-0">
         <div className="pt-1 text-[3px] leading-[0.2rem]">
           <Banner />
