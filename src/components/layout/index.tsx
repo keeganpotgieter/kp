@@ -1,4 +1,4 @@
-import { CrypticHover } from "../ui/extended/crypting-hover";
+import { CrypticHover } from "../ui/extended/cryptic-hover";
 import WindowDisplay from "../ui/extended/window";
 import SecretGreeting from "./secret-greeting";
 import React from "react";
