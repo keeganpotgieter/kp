@@ -12,6 +12,21 @@ const themeColors = {
 export const useTheme = () => {
   const { theme, setTheme } = useNextTheme();
 
+  React.useEffect(() => {
+    let metaThemeColor = document.querySelector('meta[name="theme-color"]');
+
+    if (!metaThemeColor) {
+      metaThemeColor = document.createElement("meta");
+      metaThemeColor.setAttribute("name", "theme-color");
+      document.head.appendChild(metaThemeColor);
+    }
+
+    metaThemeColor.setAttribute(
+      "content",
+      theme ? themeColors[theme as keyof typeof themeColors] : themeColors.dark,
+    );
+  }, [theme]);
+
   const handleSetTheme = React.useCallback(
     (name: string | undefined) => {
       if (!name) {
@@ -29,17 +44,6 @@ export const useTheme = () => {
       }
 
       setTheme(theme);
-
-      const metaThemeColor = document.querySelector('meta[name="theme-color"]');
-
-      if (metaThemeColor) {
-        metaThemeColor.setAttribute(
-          "content",
-          theme
-            ? themeColors[theme as keyof typeof themeColors]
-            : themeColors.dark,
-        );
-      }
 
       return `Theme ${theme} set successfully!`;
     },
