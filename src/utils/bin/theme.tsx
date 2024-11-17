@@ -52,7 +52,7 @@ export const theme = {
   description: "Set the shell theme",
   _arguments: {
     ls: null,
-    set: themes,
+    set: themes as unknown as string[],
     random: null,
   },
 } satisfies BinFunction<[CallbackFn, ...string[]]>;

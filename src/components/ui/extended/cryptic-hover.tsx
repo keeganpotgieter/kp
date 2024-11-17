@@ -5,6 +5,15 @@ import { type MotionValue, useMotionValue } from "framer-motion";
 import { useMotionTemplate, motion } from "framer-motion";
 import React, { useState, useEffect } from "react";
 
+const getWindowMouseX = () => {
+  if (typeof window !== "undefined") return window.innerWidth / 2;
+  return 0;
+};
+const getWindowMouseY = () => {
+  if (typeof window !== "undefined") return window.innerHeight / 2;
+  return 0;
+};
+
 export const CrypticHover = ({
   className,
   children,
@@ -12,8 +21,8 @@ export const CrypticHover = ({
   className?: string;
   children?: React.ReactNode;
 }) => {
-  const mouseX = useMotionValue(window.innerWidth / 2);
-  const mouseY = useMotionValue(window.innerHeight / 2);
+  const mouseX = useMotionValue(getWindowMouseX());
+  const mouseY = useMotionValue(getWindowMouseY());
 
   const [randomString, setRandomString] = useState("");
 
