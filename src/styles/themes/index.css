@@ -126,3 +126,30 @@
     animation-play-state: running;
   }
 }
+
+.mask {
+  position: relative;
+  background-clip: content-box;
+}
+
+.mask::before {
+  content: "";
+  position: absolute;
+  content: "";
+  position: absolute;
+  left: 0rem;
+  right: 0rem;
+  top: 0rem;
+  height: 1rem;
+  z-index: 100;
+}
+
+.mask::after {
+  content: "";
+  position: absolute;
+  left: 0.5rem;
+  right: 0.5rem;
+  bottom: 0.25rem;
+  height: 0.5rem;
+  z-index: 100;
+}
