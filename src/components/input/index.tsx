@@ -272,8 +272,6 @@ export const Input = ({
     }
   };
 
-  const cmdExists = commandExists(value);
-
   return (
     <div className="relative w-full max-w-full flex-row py-1">
       <label htmlFor="prompt" className="float-left flex-shrink">
@@ -286,7 +284,7 @@ export const Input = ({
         ref={inputRef}
         id="prompt"
         className={cn(
-          "overflow-x-clip bg-background focus:outline-none",
+          "overflow-x-clip focus:outline-none",
           commandExists(value) || value === ""
             ? tw`text-valid`
             : tw`text-invalid`,
