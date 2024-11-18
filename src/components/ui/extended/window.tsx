@@ -52,7 +52,7 @@ const WindowDisplay = ({
         className,
         minify
           ? "animate-minimize-window sm:h-0 sm:w-fit"
-          : "animate-maximize-window ease-better-ease-in-out sm:h-full sm:w-full sm:transition-[transform,shadow] sm:hover:-translate-y-[2px] sm:hover:shadow-2xl",
+          : "animate-maximize-window transition-shadow ease-better-ease-in-out sm:h-full sm:w-full sm:hover:shadow-2xl",
       )}
     >
       <div
