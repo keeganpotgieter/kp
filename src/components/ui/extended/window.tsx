@@ -109,18 +109,20 @@ const WindowDisplay = ({
       </div>
       <div
         className={cn(
-          "flex h-full min-w-full max-w-2xl flex-1 flex-col overflow-clip border-t-0 border-border/20 bg-background text-foreground sm:rounded-b-lg sm:border",
+          "bottom-laser-fade flex h-full min-w-full max-w-2xl flex-1 flex-col overflow-hidden border-t-0 border-border/20 bg-background text-foreground sm:rounded-b-lg sm:border",
           { "sm:max-h-0 sm:max-w-0 sm:border-none": minify },
         )}
       >
-        <div className="flex h-fit w-full items-center justify-center pt-2 text-center text-[4px] leading-[0.25rem] sm:hidden">
+        <div className="top-laser-fade flex h-16 w-full items-center justify-center pt-2 text-center text-[4px] leading-[0.25rem] sm:hidden">
           <Banner />
         </div>
 
-        <div className="hidden h-fit w-full items-center justify-center pt-2 text-center text-[7px] leading-[0.5rem] sm:flex">
+        <div className="top-laser-fade hidden h-20 w-full items-center justify-center pt-2 text-center text-[7px] leading-[0.5rem] sm:flex">
           <Banner />
         </div>
-        <div className="mask relative overflow-y-clip">{children}</div>
+        <div className="relative overflow-y-auto overscroll-none">
+          {children}
+        </div>
       </div>
     </div>
   );
