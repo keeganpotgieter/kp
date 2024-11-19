@@ -48,7 +48,7 @@
 }
 
 .light {
-  .mask {
+  /* .top-laser-fade {
     mask-image: linear-gradient(
       to top,
       black 0%,
@@ -61,16 +61,16 @@
       black calc(100% - 1rem),
       transparent 100%
     );
-  }
+  } */
 
-  .mask::before {
+  .top-laser-fade::after {
     backdrop-filter: blur(2px) saturate(5) contrast(1) opacity(0.3);
     -webkit-backdrop-filter: blur(2px) saturate(5) contrast(1) opacity(0.3);
     mask-image: linear-gradient(to bottom, black 0%, transparent 100%);
     -webkit-mask-image: linear-gradient(to bottom, black 0%, transparent 100%);
   }
 
-  .mask::after {
+  .bottom-laser-fade::after {
     backdrop-filter: blur(1px) saturate(1) contrast(2) opacity(0.1);
     -webkit-backdrop-filter: blur(1px) saturate(1) contrast(2) opacity(0.1);
     mask-image: linear-gradient(

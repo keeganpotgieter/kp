@@ -127,29 +127,28 @@
   }
 }
 
-.mask {
+.top-laser-fade,
+.bottom-laser-fade {
   position: relative;
   background-clip: content-box;
 }
 
-.mask::before {
-  content: "";
-  position: absolute;
+.top-laser-fade::after {
   content: "";
   position: absolute;
   left: 0rem;
   right: 0rem;
-  top: 0rem;
+  bottom: -1rem;
   height: 1rem;
   z-index: 100;
 }
 
-.mask::after {
+.bottom-laser-fade::after {
   content: "";
   position: absolute;
   left: 0.5rem;
   right: 0.5rem;
-  bottom: 0.25rem;
+  bottom: 0rem;
   height: 0.5rem;
   z-index: 100;
 }
