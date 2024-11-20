@@ -120,7 +120,10 @@ const WindowDisplay = ({
         <div className="top-laser-fade hidden h-20 w-full items-center justify-center pt-2 text-center text-[7px] leading-[0.5rem] sm:flex">
           <Banner />
         </div>
-        <div className="relative overflow-y-auto overscroll-none">
+        <div
+          id="scrollable-container"
+          className="relative overflow-y-auto overscroll-none"
+        >
           {children}
         </div>
       </div>
