@@ -11,6 +11,7 @@ export const Shell = () => {
   const onClickAnywhere = () => {
     inputRef.current?.focus();
   };
+
   return (
     <ShellProvider>
       <Layout onClick={onClickAnywhere}>
